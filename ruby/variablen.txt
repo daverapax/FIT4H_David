@@ -1,0 +1,25 @@
+Zuweisung
+	variablen_name = "Dies ist ein String"
+	#Eine Zuweisung erfolgt über den Zuweisungsoperator '='
+	#Der Variablentyp (String, Integer, Time, ...) erfolgt über die Eingabe
+
+Zeichenkette (String):
+	
+	var1 = "Blub 123"
+	
+	Ein String wird ereugt, indem eine beliebige Anzahl von Zeichen, Zahlen, Buchstaben) innerhalb von Anführungszeichen steht.
+
+	Zeichenkettenkleber
+
+	tag = "Freitag"
+	str = "Heute ist " + tag
+	=> "Heute ist Freitag"
+
+
+Integer, Ganze Zahl, Fixnum
+
+	var2 = 15
+
+Float, Kommazahl
+
+	var3 = 13.44

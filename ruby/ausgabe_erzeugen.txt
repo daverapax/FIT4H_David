@@ -1,0 +1,18 @@
+Soll auf der Konsole eine Ausgabe erzeugt werden geschieht das über den Befehl:
+
+	puts <string>
+
+	puts "Text"
+	puts variablenname
+	zahl = 15
+	puts zahl.to_s
+
+Zusammengesetzte Ausgabe:
+Ausgeben eines Strings, der sich aus text und den Inhalt von Variablen zusammen setzt
+
+str = "Freitag"
+zahl = 04
+
+puts "Heute ist #{str}, der #{Time.new}."
+	#Am Anfang und am Ende müssen doppelte Anführungszeichen stehen.
+	#Innerhalb des Konstruktes #{} kann jederRuby-Code ausgeführt werden. Es findet automatisch eine Konvertierung des Ergebnisses in einem String statt.
