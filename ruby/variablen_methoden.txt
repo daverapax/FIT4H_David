@@ -13,4 +13,4 @@ var.reverse!
 	! am Ende der Methode ändert den Variablenwert
 
 var.methods
-	Listet alle für diese Klasse möglichen Methoden auf.
+	Listet alle für diese Klasse möglichen Methoden auf.ls 

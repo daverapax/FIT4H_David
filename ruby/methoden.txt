@@ -1,0 +1,29 @@
+methoden.txt
+Prinzip
+
+DRY - Dont repaet yourself
+
+Definition:
+	def methoden_name #Anfang
+		code
+	end	#Ende
+
+Aufruf:
+	
+
+Rückgabewert:
+	Ruby gibt den letzten berechneten Wert der Methode aus
+
+Variablen
+	Variablen die in der Methode definiert werden gelten nur innerhalbt der Methode
+
+Parameter
+	Eine Methode kann Parameter verarbeiten, indem nach dem Methodennamen in Klammern Variablen definiert werden
+
+def movie(name)
+	"Movie: #{name.downcase.capitalize)}"
+end
+
+puts movie("Turtles")
+puts movie("SWAT")
+
