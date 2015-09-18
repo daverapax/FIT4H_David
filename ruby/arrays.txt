@@ -1,0 +1,28 @@
+Definition:
+	1.
+	variable = ['eins','zwei','drei']
+
+	2.
+	variable = Array.new
+	3.
+	variable = %w(eins zwei drei)
+		Kurzform wenn nur Strings übergeben werden sollen
+
+	Werte eingeben:
+
+		variable << 'vier'
+		variable.push('funf')
+
+	Methoden:
+
+		variable.size								#Anzahl der Elemente
+		variable.pop								#Entfernt letztes Element
+		variable.empty?							#Array leer?
+		variable.inculde?('vier')		#Element enthalten?
+
+	Ausgabe:
+		variable[0]									#Der erste Wert wird ausgegeben
+		
+
+
+

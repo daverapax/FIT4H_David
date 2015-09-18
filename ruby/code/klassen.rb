@@ -1,5 +1,7 @@
 class Movie
 	
+	attr_accessor :title
+
 	def initialize(ptitle, prank=0)
 		@title = ptitle.capitalize
 		@rank = prank
@@ -21,10 +23,10 @@ class Movie
 end
 
 obj_movie1 = Movie.new('turtles', 5)
-puts obj_movie1
-obj_movie1.thumbs_up
-puts obj_movie1
-3.times do
-	obj_movie1.thumbs_down
+obj_movie2 = Movie.new('8mm', 9)
+obj_movie3 = Movie.new('Film', 3)
+
+movies = [obj_movie1, obj_movie2, obj_movie3]
+movies.each do |movie|
+	puts movie
 end
-puts obj_movie1	

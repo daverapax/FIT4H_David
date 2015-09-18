@@ -29,3 +29,30 @@ Konstruktor:
 Instanzvariable:
 	Eine Instanzvariable einer Klasse gilt in jeder Methode der Klasse. Während also ptitle nur innerhalb der Methode <initialize> gilt, kann die Instanzvariable @title auch in jeder anderen Methode der Klasse Movie verwendet werden.
 	Eine andere Bezeichnung für Instanzvariable ist Attribut oder Eigenschaft.
+
+	Eigenschaften:
+		Instanzvariablen sind in den meisten Fällen auch Eigenschaften, die das Objekt charakterisieren. Wenn ich eine Eigenschaft ausgeben möchte ( von aussen auf die Eigenschaft zugreifen), dann muss ich eine Methode schreiben, die genauso wie die Eigenschaft heißt.
+		Bsp.:
+		Instanzvariable: @title
+		Eigenschaft: title
+		Reader-Methode:
+			def title
+				@title
+			end
+
+			Kurzform (Shortcut): attr_reader :title
+		Nun Kann ich mit dem Objekt auf die Eigenschaft title zugreifen:
+			object1.title
+
+			Soll von außen auf die Eigenschaft title zugegriffen werden, dann ist die Writer-Methode nötig.
+				Writer-Methode:
+					def title=(parameter)
+						@title = parameter.capitalize
+					end
+
+					Kurzform: attr_writer :title
+				Nun kann für diese Eigenschaft ein neuer Wert zugewiesen werden.
+					Object1.title = "Neuer Wert"
+
+				Kurz-Kurz-Form: Wenn sowohl ein Reader als auch ein Writer benötigt wird:
+					attr_accessor :title

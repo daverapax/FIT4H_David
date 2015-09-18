@@ -23,10 +23,12 @@ class Player
 
 	def w00t
 		@health += 10
+		puts "#{@name} goot w00ted"
 	end
 
 	def blamed
 		@health -= 10
+		puts "#{@name} goot blamed"
 	end
 
 end
@@ -41,5 +43,5 @@ player2 = Player.new('Micha')
 puts player2.say_hello
 player2.w00t
 player1.blamed
-players = "#{player1.say_hello}\n#{player2.say_hello}"
+players = "Players: \n\t#{player1.say_hello}\n\t#{player2.say_hello}"
 puts players

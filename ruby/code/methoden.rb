@@ -6,7 +6,7 @@ def movie(name, rank=7)
 end
 
 def weekday
-	Time.now.strftime("%A")
+	Time.now.strftime("%1")
 end
 
 
