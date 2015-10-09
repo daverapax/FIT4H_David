@@ -1,19 +1,21 @@
 class Kunde
 
-	attr_accessor :vname
-	attr_accessor :nname
+	#attr_accessor :vname
+	#attr_accessor :nname
 	attr_accessor :name
 	attr_accessor :addr
 	attr_accessor :gehalt
 
-	def initialize(kvname, knname)
-		@vname = kvname
-		@nname = knname
+	def initialize(name)
+		#@vname = kvname
+		#@nname = knname
 		#@addr = kaddr
-		@name = @vname.capitalize! + " " + @nname.capitalize!
+		@name = name
 	end
 
-	
+	def daten
+		puts "Vorname: #{@name.split.first.capitalize}\nNachname: #{@name.split.last.capitalize}\nAdresse: #{@addr}"
+	end
 
 
 
