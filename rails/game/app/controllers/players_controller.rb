@@ -21,17 +21,9 @@ class PlayersController < ApplicationController
   def edit
   end
 
-  def woot
+  def self.woot
     @player.health += 10
-    respond_to do |format|
-      if @player.woot
-        format.html { redirect_to @player, notice: 'Player was successfully updated.' }
-        format.json { render :show, status: :ok, location: @player }
-      else
-        format.html { render :edit }
-        format.json { render json: @player.errors, status: :unprocessable_entity }
-      end
-    end
+    
   end
 
   # POST /players
