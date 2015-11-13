@@ -2,7 +2,7 @@ class EventsController < ApplicationController
 
 	def index
 
-		@events = %w(Arran Lappadia Bob)
+		@events = Event.all
 
 	end
 

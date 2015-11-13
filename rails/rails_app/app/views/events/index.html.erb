@@ -1,9 +1,23 @@
 <h1>Events</h1>
 <h2>listing generated at: <%= Time.now %></h2>
+<p>Zeige folgende <%= @events.size %> Veranstaltungen an:</p>
 <p>
-	<ul>
+	<table>
+	<tr>
+			<th>Name</th>
+			<th>Ort</th>
+			<th>Preis</th>
+			<th>Beginn</th>
+			<th>Beschreibung</th>
+	</tr>
 	<% @events.each do |event| %>
-		<li><%= event %></li>
+		<tr> 
+			<td><%= event.name %> </td>
+			<td><%= event.location %> </td>
+			<td><%= format_price(event) %> </td>
+			<td><%= event.start_at.to_s %></td>
+			<td><%= truncate(event.desciption, length: 10, seperator: ' ') %></td>
+		</tr>
 	<% end %>
-	</ul>
+	</table>
 </p>
