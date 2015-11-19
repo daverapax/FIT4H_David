@@ -1,5 +1,7 @@
 <h1>Movies</h1>
 
+<p><%= link_to "Neues Event", new_movie_path %></p>
+
 <p>
 	<table>
 		<tr>
@@ -10,16 +12,22 @@
 			<th>Website</th>
 			<th>Pledging</th>
 			<th>Eingespielt</th>
+			<th>Show</th>
+			<th>Edit</th>
+			<th>Delte</th>
 		</tr>	
 		<tr>
 			<% @movies.each do |m| %>
 			<td> <%= m.title %> </td>
 			<td> <%= m.rating %> </td>
 			<td> <%= m.description %> </td>
-			<td> <%= m.release.to_s %> </td>
+			<td> <%= time_ago_in_words(m.release) unless m.release.blank? %> </td>
 			<td><a href='<%= m.web %>' target=_blank><%= m.web %></a> </td>
 			<td> <%= m.pledging.to_s %> </td>
 			<td> <%= number_to_currency(m.total_gross, unit: "€") %> </td>
+			<td><%= link_to "Show", movie_path(m.id) %></td>
+			<td><%= link_to "Edit", edit_movie_path(m.id) %></td>
+			<td><%= link_to "Delete", movie_path(m.id), method: :delete, data: {confirm: "Sicher???"} %></td>
 
 		</tr>
 		<% end %>

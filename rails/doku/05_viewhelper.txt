@@ -10,3 +10,9 @@ Es gibt allerdings auch die Möglichkeit eigene Helper zu schreiben. Z.B.:
 		def format_price(event)
 			...
 		end
+
+link_to
+	Die Verlinkung wird in Rails über den link_to -helper realisiert:
+		link_to "Alle anzeigen", events_path
+			erstellt den HTML-Code:
+				<a href="/events">Alle anzeigen</a>
