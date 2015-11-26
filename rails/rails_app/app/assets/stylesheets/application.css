@@ -12,23 +12,6 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
-td  {
-	padding: 15px;
-	//border: solid 1px;
-	text-align: center;
-}
-th  {
-	padding: 5px;
-	//border: solid 1px;
-}
-table {
-	//border: solid 1px;
-	width: 95%;
-}
-
-tr {
-	//border: solid 1px;
-}
-
-span {color: red;}

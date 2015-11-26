@@ -1,44 +1,70 @@
 <%= form_for(@movie) do |f| %>
-<table>
-	<tr>
-		<td><%= f.label :name %>: </td>
-		<td><%= f.text_field :title %></td>
-		
-	</tr>
-	<tr>
-		<td><%= f.label :beschreibung %>: </td>
-		<td><%= f.text_area(:description, cols: 150, rows: 10) %></td>
-		
-	</tr>
 
-	<tr>
-		<td><%= f.label :rating %>: </td>
-		<td><%= f.text_field :rating %></td>
+	<div class="row">
+		<div class="medium-2 columns">
+		<%= f.label :name %>
+		</div>
+		<div class="medium-10 columns">
+		<%= f.text_field :title %>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="medium-2 columns">	
+		<%= f.label :beschreibung %>
+		</div>
+		<div class="medium-10 columns">
+		<%= f.text_area(:description, cols: 150, rows: 10) %>
+		</div>
+	</div>
 		
-	</tr>
-	<tr>
-		<td><%= f.label :eingespielt %>: </td>
-		<td><%= f.number_field :total_gross %></td>
+	<div class="row">
+		<div class="medium-2 columns">	
+		<%= f.label :rating %>
+		</div>
+		<div class="medium-10 columns">
+		<%= f.text_field :rating %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="medium-2 columns">	
+		<%= f.label :eingespielt %>
+		</div>
+		<div class="medium-10 columns">
+		<%= f.number_field :total_gross %>
+		</div>
+	</div>
 		
-	</tr>
-	<tr>
-		<td><%= f.label :web %>: </td>
-		<td><%= f.text_field :web %></td>
+	<div class="row">
+		<div class="medium-2 columns">	
+		<%= f.label :web %>
+		</div>
+		<div class="medium-10 columns">
+		<%= f.text_field :web %>
+		</div>
+	</div>
 		
-	</tr>
-	<tr>
-		<td><%= f.label :release %>: </td>
-		<td><%= f.datetime_select :release %></td>
+	<div class="row">
+		<div class="medium-2 columns">	
+		<%= f.label :release %>
+		</div>
+		<div class="medium-10 columns">
+		<%= f.datetime_select :release %>
+		</div>
+	</div>
 		
-	</tr>
-	<tr>
-		<td><%= f.label :pledging %>: </td>
-		<td><%= f.datetime_select :pledging %></td>
+	<div class="row">
+		<div class="medium-2 columns">	
+		<%= f.label :pledging %>
+		</div>
+		<div class="medium-10 columns">
+		<%= f.datetime_select :pledging %>
+		</div>
+	</div>
 		
-	</tr>
-	<tr>
-		<td><%= f.submit %></td>
-		<td><%= link_to "zurück", movies_path %></td>
-	</tr>	
-</table>
+	
+		<%= f.submit %>
+		<%= link_to "zurück", movies_path %>
+
 <% end %>
