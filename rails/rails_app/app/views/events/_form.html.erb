@@ -1,4 +1,16 @@
 <%= form_for(@event) do |f| %>
+	
+	<% if @event.errors.any? %>
+
+		<div class="panel">
+				<ul>
+					<%= @event.errors.full_messages.each do |message| %>
+						<li><%= message %></li>
+					<% end %>
+				</ul>
+		</div>
+
+	<% end %>
 
  <div class="row">
  	<div class="medium-2 columns">
@@ -55,7 +67,35 @@
  	</div>
  </div>
 	
+ 
+		
+		<div class="row">
+ 	<div class="medium-2 columns">
+ 			<%= f.label :teilnehmer %>:
+	
+ 	</div>
+
+ 	<div class="medium-10 columns">
+ 			<%= f.number_field :capacity %>
+ 	</div>
+ </div>
+
  <div class="row">
+ 	<div class="medium-2 columns">
+ 			<%= f.label :bild %>: 
+		
+ 	</div>
+
+ 	<div class="medium-10 columns">
+ 			<%= f.text_field :image, size: 30 , placeholder: "Gif, jpegf, png Dateiname" %>
+ 	</div>
+ </div>
+		
+
+		
+		
+
+<div class="row">
  	<div class="medium-2 columns">
 		<%= f.submit %>
 </div>
@@ -64,13 +104,6 @@
 
 		</div>
  </div>
-		
-		
-
-		
-		
-
-
 	
 		
 		

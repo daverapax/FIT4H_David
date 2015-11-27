@@ -10,4 +10,12 @@ module ApplicationHelper
 
 	end
 
+	def image_for(event)
+			if event.image.blank?
+				image_tag 'dummy.jpg'
+			else
+				image_tag event.image_file
+			end
+		end
+
 end

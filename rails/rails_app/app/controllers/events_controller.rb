@@ -6,6 +6,12 @@ class EventsController < ApplicationController
 
 	end
 
+	def showall
+
+		@events = Event.all
+
+	end
+
 	def show
 
 		@event = Event.find(params[:id])
@@ -35,8 +41,11 @@ class EventsController < ApplicationController
 	def create
 
 		@event = Event.new
-		@event.update(event_params)
-		redirect_to event_path(@event.id)
+		if @event.update(event_params)
+			redirect_to event_path(@event.id)
+		else 
+			render "new"
+		end
 
 	end
 
@@ -50,7 +59,7 @@ class EventsController < ApplicationController
 
 	private
 		def event_params
-			params.require(:event).permit(:name, :desciption, :location, :price, :start_at)
+			params.require(:event).permit(:name, :desciption, :location, :price, :start_at, :image, :capacity)
 		end
 
 
