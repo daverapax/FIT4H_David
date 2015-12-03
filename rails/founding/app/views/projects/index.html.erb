@@ -1,0 +1,35 @@
+<h1>test</h1>
+
+<%= Time.zone %>
+
+<p>There are <%= @projects.count %> Projects listed</p>
+
+<p><%= link_to "Neues Projekt anlegen", new_project_path %></p>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Beschreibung</th>
+		<th>Zielfinanzierung</th>
+		<th>Endet in</th>
+		<th>Website</th>
+		<th>Show</th>
+		<th>Edit</th>
+	</tr>
+
+
+
+<% @projects.each do |p| %>
+
+	<tr>
+	<td><%= p.name %></td>
+	<td><%= truncate(p.description, length: 20) %></td>
+	<td><%= number_to_currency(p.target_pledge, unit: "€") %></td>
+	<td><%= p.ttl %></td>
+	<td><%= p.website %></td>
+	<td><%= link_to "Show", project_path(p.id) %></td>
+	<td><%= link_to "Edit", edit_project_path(p.id) %></td>
+	</tr>
+<% end %>
+
+</table>

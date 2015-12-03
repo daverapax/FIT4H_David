@@ -1,0 +1,11 @@
+<h1>Project: <%= @project.name %></h1>
+
+
+<p>Beschreibung:</p>
+<p><%= @project.description %></p>
+<p>Finanzierungsziel: <%= number_to_currency(@project.target_pledge, unit: "€") %></p>
+<p>Läuft bis: <%= @project.ttl %></p>
+<p>Website: <%= @project.website %></p>
+
+
+<%= link_to "Übersicht", projects_path %>

@@ -1,0 +1,50 @@
+<%= form_for(@project) do |f| %>
+	
+	<div class="row">
+		<div class="medium-2 columns">
+			<%= f.label :name %>
+		</div>
+		<div class="medium-10 columns">
+			<%= f.text_field :name %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="medium-2 columns">
+			<%= f.label :beschreibung %>
+		</div>
+		<div class="medium-10 columns">
+			<%= f.text_area :description %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="medium-2 columns">
+			<%= f.label :finanzierungsziel %>
+		</div>
+		<div class="medium-10 columns">
+			<%= f.number_field :target_pledge %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="medium-2 columns">
+			<%= f.label :ende %>
+		</div>
+		<div class="medium-10 columns">
+			<%= f.datetime_select :ttl %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="medium-2 columns">
+			<%= f.label :website %>
+		</div>
+		<div class="medium-10 columns">
+			<%= f.text_field :website %>
+		</div>
+	</div>
+
+	<%= f.submit %>
+
+	<% end %>
