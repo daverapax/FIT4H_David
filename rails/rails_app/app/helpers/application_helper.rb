@@ -14,7 +14,7 @@ module ApplicationHelper
 			if event.image.blank?
 				image_tag 'dummy.jpg'
 			else
-				image_tag event.image_file
+				image_tag event.image
 			end
 		end
 

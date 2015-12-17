@@ -14,7 +14,7 @@
 			<%= f.label :beschreibung %>
 		</div>
 		<div class="medium-10 columns">
-			<%= f.text_area :description %>
+			<%= f.text_area :description, cols: 40, rows: 10 %>
 		</div>
 	</div>
 
@@ -45,6 +45,16 @@
 		</div>
 	</div>
 
-	<%= f.submit %>
+
+	<div class="row">
+		<div class="medium-2 columns">
+			<%= f.submit %>
+		</div>
+		<div class="medium-10 columns">
+			
+		</div>
+	</div>
+
+	
 
 	<% end %>

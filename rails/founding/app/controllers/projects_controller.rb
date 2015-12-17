@@ -14,8 +14,12 @@ class ProjectsController < ApplicationController
 
 	def update
 		@project = Project.find(params[:id])
-		@project.update(project_params)
-		redirect_to project_path(@project.id)
+		if @project.update(project_params)
+			flash[:notice] = "speichern erfolgreich"
+			redirect_to project_path(@project.id)
+		else
+			render "edit"
+		end
 	end
 
 	def new
@@ -24,8 +28,20 @@ class ProjectsController < ApplicationController
 
 	def create
 		@project = Project.new
-		@project.update(project_params)
-		redirect_to project_path(@project.id)
+		if @project.update(project_params)
+			flash[:notice] = "speichern erfolgreich"
+			redirect_to project_path(@project.id)
+		else
+			render "new"
+		end
+	end
+
+	def destroy
+
+		@project = Project.find(params[:id])
+		@project.destroy
+		redirect_to projects_url
+
 	end
 
 

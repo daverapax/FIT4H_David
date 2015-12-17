@@ -1,9 +1,9 @@
 module ProjectsHelper
-	# def done?(@project.ttl)
-	# 	if @projject.ttl < DateTime.now
-	# 		puts "All Done!"
-	# 	else
-	# 		puts "#{@project.ttl - DateTime.now} bis Ablauf"
-	# 	end
-	# end
+	def done(project)
+			if project.past?
+				"Abgelaufen"
+			else
+				distance_of_time_in_words_to_now(project)
+		end
+	end
 end

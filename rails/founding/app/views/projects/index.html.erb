@@ -1,6 +1,6 @@
 <h1>test</h1>
 
-<%= Time.zone %>
+<%= Date.current %>
 
 <p>There are <%= @projects.count %> Projects listed</p>
 
@@ -15,6 +15,7 @@
 		<th>Website</th>
 		<th>Show</th>
 		<th>Edit</th>
+		<th>Delete</th>
 	</tr>
 
 
@@ -25,10 +26,11 @@
 	<td><%= p.name %></td>
 	<td><%= truncate(p.description, length: 20) %></td>
 	<td><%= number_to_currency(p.target_pledge, unit: "€") %></td>
-	<td><%= p.ttl %></td>
+	<td><%= done(p.ttl) %></td>
 	<td><%= p.website %></td>
 	<td><%= link_to "Show", project_path(p.id) %></td>
 	<td><%= link_to "Edit", edit_project_path(p.id) %></td>
+	<td><%= link_to "Delete", project_path(p.id), method: :delete, data: {confirm: "Sicher???"} %></td>
 	</tr>
 <% end %>
 

@@ -1,5 +1,9 @@
 <h1><%= @event.name %></h1>
 
+
+<div class="flash">
+	<%= flash[:notice] %>
+</div>
 <div class="panel">
 	<div class="row">
 		<div class="medium-2 columns">
@@ -49,4 +53,8 @@
 	</div>
 </div>
 
-<p><%= link_to "back", events_path %></p>
+
+
+<p><%= link_to "back", events_path %> </br>
+		<%= link_to "Registrirungen", event_registrations_path(@event.id) %>
+</p>

@@ -1,0 +1,10 @@
+Unter Validations versteht man in Rails die Überprüfung eines Formularfeldes auf: 
+	- Anwesenheit
+	- Richtigkeit des Eintrags (Email, Datum)
+
+Eine Validation wird im Model definiert. 
+Bsp.: 
+	models/event.rb
+		validates : name, presence: true
+
+		Das bedeutet es wird überprüft ob in dem Feld das die Eintragung in die Spalte "name" macht beim Absenden des Formulars etwas drinsteht. Falls dem nicht so ist wird der Vorgang abgebrochen und eine Fehler zurück gegeben.
