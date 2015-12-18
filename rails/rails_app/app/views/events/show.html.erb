@@ -1,8 +1,12 @@
 <h1><%= @event.name %></h1>
 
-
+<% if flash[:notice] %>
 <div class="flash">
-	<%= flash[:notice] %>
+		<%= flash[:notice] %>
+</div>
+	<% else %>
+	<div></div>
+	<% end %>
 </div>
 <div class="panel">
 	<div class="row">
@@ -54,7 +58,8 @@
 </div>
 
 
-
-<p><%= link_to "back", events_path %> </br>
-		<%= link_to "Registrirungen", event_registrations_path(@event.id) %>
-</p>
+<ul class="button-group even-3">
+<li><%= link_to "back", events_path, type: "button", class: "button" %></li>
+<li><%= link_to "Registrierungen", event_registrations_path(@event.id), type: "button", class: "button" %></li>
+<li><%= link_to "Neue Registrierung", new_event_registration_path(@event.id), type: "button", class: "button" %></li>
+</ul>

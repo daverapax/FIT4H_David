@@ -1,13 +1,15 @@
 class RegistrationsController < ApplicationController
 
+	before_action :set_event
+
 	def index
-		@event = Event.find(params[:event_id])
+		
 		@registrations = @event.registrations 
 	end
 
 	def new
-
-		@registraion = Registraion.new
+		
+		@registraion = @event.registrations.new
 
 	end
 
@@ -24,6 +26,15 @@ class RegistrationsController < ApplicationController
 	end
 
 	private
+		def registration_params
+			params.require(:registration).permit(:name, :email, :heared, :event_id)
+		end
+
+	private
+		def set_event
+			@event = Event.find(params[:event_id])
+		end
+
 		def registration_params
 			params.require(:registration).permit(:name, :email, :heared, :event_id)
 		end
