@@ -1,8 +1,18 @@
-.flash { 	color: red;
+.flash { 	
 					text-align: center;
-					background-color: lightgreen;
+					
 					font-size: 1.4em;
 					padding: 2em;
 					margin: 2em;
 					border-radius: 5px;
 					}
+
+.notice {
+	color: orange;
+	background-color: green; 
+}
+
+.alert {
+	color: yellow;
+	background-color: red;
+}

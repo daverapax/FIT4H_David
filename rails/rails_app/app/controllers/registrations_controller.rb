@@ -9,17 +9,18 @@ class RegistrationsController < ApplicationController
 
 	def new
 		
-		@registraion = @event.registrations.new
+		@registration = @event.registrations.new
 
 	end
 
 	def create
 
-		@registraion = Registraion.new
-		if @registraion.update(registraion_params)
-			flash[:notice] = "speichern erfolgreich"
-			redirect_to registraion_path(@registraion.id)
-		else 
+		@registration = @event.registrations.new(registration_params)
+		if @registration.save
+			#flash[:notice] = "speichern erfolgreich"
+			redirect_to event_registrations_path(@event.id), notice: "speichern erfolgreich"
+		else
+			flash[:alert] = "Eingabefehler"
 			render "new"
 		end
 

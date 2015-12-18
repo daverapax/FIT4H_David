@@ -13,6 +13,15 @@
 
   <body>
 
+    <% if flash.present? %>
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "flash bla #{key}") %>
+        
+      <% end %>
+    <% else %>
+      <div></div>
+    <% end %>
+
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>

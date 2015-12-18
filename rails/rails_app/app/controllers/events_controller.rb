@@ -47,7 +47,8 @@ class EventsController < ApplicationController
 		if @event.update(event_params)
 			flash[:notice] = "speichern erfolgreich"
 			redirect_to event_path(@event.id)
-		else 
+		else
+			flash[:alert] = "Eingabefehler"
 			render "new"
 		end
 
