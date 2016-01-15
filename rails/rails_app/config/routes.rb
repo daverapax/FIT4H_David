@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'events#index'
   
   get 'signup' => "users#new"
+  get 'signin' => "sessions#new"
+  get 'logout' => "sessions#destroy"
   resources :sessions
   resources :users
   
